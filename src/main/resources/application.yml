@@ -1,0 +1,71 @@
+'no':
+  such:
+    method:
+      allowed:
+        msg: Method not allowed
+  record:
+    exists:
+      msg: No such record exists in the databases
+  invalid:
+    args:
+      msg: Passing arguments are not valid
+server:
+  error:
+    whitelabel:
+      enabled: 'false'
+  port: '8082'
+  servlet:
+    session:
+      timeout: 60s
+empty:
+  input:
+    exception:
+      msg: Input field is empty, Please look into it
+      
+      
+      
+eureka:
+  instance:
+    hostname: eureka-0
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url: 
+      defaultZone: 'http://eureka-0.eureka.default.svc.cluster.local:8761/eureka/'
+    
+spring:
+  jackson:
+    default-property-inclusion: NON_EMPTY
+  jpa:
+    database: postgresql
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: 'true'
+  application:
+    name: LIVESTACK-LOGIN-SERVICE
+  session:
+    store-type: jdbc
+    jdbc:
+      initialize-schema: always
+      table-name: spring_session
+  datasource:
+    password: postgres
+    username: postgres
+    url: jdbc:postgresql://localhost:5432/livestack
+    platform: postgres
+    
+    
+logging:
+  file: ${logging.path}/myapp.log
+  path: logs
+security:
+  jwt:
+    token:
+      secret-key: secret-key-for-encryption
+      expiration: '600000'
+authentication:
+  failed:
+    msg: Authentication Failed, Please make sure your password is correct
