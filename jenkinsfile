@@ -13,7 +13,7 @@ pipeline {
      }
     stage ("3. Build the Docker image") {
       steps {
-        sh "docker build -t livefarmer009 /home/jenkins"
+        sh "docker build -t livestacklogin009 /home/jenkins"
        }
      }
    }
