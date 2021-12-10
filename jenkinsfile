@@ -8,7 +8,7 @@ pipeline {
      }
     stage ("2. Build the project") {
       steps {
-        sh "cp -R /var/lib/jenkins/workspace/cicd_demo/target/* /home/jenkins"
+        sh "cp -R /var/lib/jenkins/workspace/Livestack_login/target/* /home/jenkins"
       }
      }
     stage ("3. Build the Docker image") {
